@@ -46,15 +46,21 @@ const App = () => {
 
   return (
     <>
+      <div style={{textAlign: 'center', margin: '100px'}}>
+    <h1>Crud Practice</h1>
       <form onSubmit={addStudent}>
-        <input type="text" placeholder='name' ref={name} />
-        <input type="email" placeholder='email' ref={email} />
-        <input type="number" placeholder='age' ref={age} />
+        <h3 style={{marginRight:'150px'}}>Name</h3>
+        <input style={{padding:'5px 15px', borderRadius:'9px'}} type="text" placeholder='name' ref={name} /><br /><br />
+        <h3 style={{marginRight:'150px'}}>Email</h3>
+        <input style={{padding:'5px 15px', borderRadius:'9px'}} type="email" placeholder='email' ref={email} /><br /><br />
+        <h3 style={{marginRight:'150px'}}>Age</h3>
+        <input style={{padding:'5px 15px', borderRadius:'9px'}} type="number" placeholder='age' ref={age} /><br /><br />
         <button type='submit'>addStudent</button>
       </form>
       {student ? student.map((item) => {
-        return <h1 style={{ cursor: 'pointer' }} onClick={() => getSingleStudent(item._id)} key={item._id}> {item.name}</h1>
+        return <h1 style={{ cursor: 'pointer'  }} onClick={() => getSingleStudent(item._id)} key={item._id}> {item.name}</h1>
       }) : <h1>Loading...</h1>}
+      </div>
     </>
   )
 }
